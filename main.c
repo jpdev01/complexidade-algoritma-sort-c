@@ -30,9 +30,9 @@ void main() {
     FILE *averageCaseFile = fopen("/home/asaas/CLionProjects/trabalho/averageCase.txt", "w+");
     FILE *bestCaseFile = fopen("/home/asaas/CLionProjects/trabalho/bestCase.txt", "w+");
 
-    fprintf(worstCaseFile, "%s", "tamanho;bubble;insertion;heap;merge;quick;radix\n");
-    fprintf(bestCaseFile, "%s", "tamanho;bubble;insertion;heap;merge;quick;radix\n");
-    fprintf(averageCaseFile, "%s", "tamanho;bubble;insertion;heap;merge;quick;radix\n");
+    fprintf(worstCaseFile, "%s", "tamanho;bubble;insertion;heap;merge;radix\n");
+    fprintf(bestCaseFile, "%s", "tamanho;bubble;insertion;heap;merge;radix\n");
+    fprintf(averageCaseFile, "%s", "tamanho;bubble;insertion;heap;merge;radix\n");
 
     for (int currentVectorSize = 1; currentVectorSize <= maxSize; currentVectorSize++) {
         int* vWorstCase = worstCase(currentVectorSize);

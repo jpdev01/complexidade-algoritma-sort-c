@@ -21,7 +21,7 @@ void runTestAndRecord(FILE *file, int* v, int currentVectorSize) {
     fprintf(file, "%i,%d,%d", currentVectorSize, piorCasoBubbleSort, piorCasoHeapSort);
 }
 
-int main() {
+void main() {
     int maxSize = 1000;
     FILE *worstCaseFile = fopen("/home/asaas/CLionProjects/trabalho/worstCase.txt", "w+");
     FILE *averageCaseFile = fopen("/home/asaas/CLionProjects/trabalho/averageCase.txt", "w+");

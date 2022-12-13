@@ -44,4 +44,6 @@ void main() {
     fclose(worstCaseFile);
     fclose(bestCaseFile);
     fclose(averageCaseFile);
+
+    printf("Arquivo csv gerado.");
 }

@@ -26,7 +26,7 @@ int main() {
     printf("Melhor caso: %d\n", bubbleSort(clone(vMelhorCaso, n), n));
     printf("Caso medio: %d\n", bubbleSort(clone(vCasoMedio, n), n));
 
-    printf("Bubblesort v2\n");
+    printf("Heapsort\n");
     printf("Pior caso: %d\n", heapSort(clone(vPiorCaso, n), n));
     printf("Melhor caso: %d\n", heapSort(clone(vMelhorCaso, n), n));
     printf("Caso medio: %d\n", heapSort(clone(vCasoMedio, n), n));

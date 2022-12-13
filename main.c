@@ -5,7 +5,7 @@
 #include "bubbleSort.c"
 #include "heapSort.c"
 #include "cases.c"
-#include "insertSort.c"
+#include "insertionSort.c"
 
 int* clone(int v[], int n) {
     int* c = malloc(sizeof(int) * n);
@@ -19,7 +19,7 @@ int* clone(int v[], int n) {
 
 void runTestAndRecord(FILE *file, int* v, int currentVectorSize) {
     int bubbleSortResult = bubbleSort(clone(v, currentVectorSize), currentVectorSize);
-    int insertionSortResult = insertionsort(clone(v, currentVectorSize), currentVectorSize);
+    int insertionSortResult = insertionSort(clone(v, currentVectorSize), currentVectorSize);
     int heapSortResult = heapSort(clone(v, currentVectorSize), currentVectorSize);
     fprintf(file, "%i,%d,%d,%d\n", currentVectorSize, bubbleSortResult, insertionSortResult, heapSortResult);
 }

@@ -1,4 +1,4 @@
-int insertionsort(int v[], int n) {
+int insertionSort(int v[], int n) {
     int pivo, j;
     int contador = 0;
 

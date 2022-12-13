@@ -1,9 +1,3 @@
-void swap(int v[], int i, int j) {
-    int aux = v[i];
-    v[i] = v[j];
-    v[j] = aux;
-}
-
 void heapify(int v[], int n, int i, int* contador) {
     int raiz = i;
     int esquerda = 2 * i + 1;

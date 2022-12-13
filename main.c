@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include "utils.c"
 #include "bubbleSort.c"
 #include "heapSort.c"
 #include "cases.c"

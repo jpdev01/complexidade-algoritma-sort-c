@@ -21,7 +21,7 @@ void runTestAndRecord(FILE *file, int* v, int currentVectorSize) {
     int bubbleSortResult = bubbleSort(clone(v, currentVectorSize), currentVectorSize);
     int insertionSortResult = insertionsort(clone(v, currentVectorSize), currentVectorSize);
     int heapSortResult = heapSort(clone(v, currentVectorSize), currentVectorSize);
-    fprintf(file, "%i,%d,%d,%d", currentVectorSize, bubbleSortResult, insertionSortResult, heapSortResult);
+    fprintf(file, "%i,%d,%d,%d\n", currentVectorSize, bubbleSortResult, insertionSortResult, heapSortResult);
 }
 
 void main() {
@@ -30,9 +30,9 @@ void main() {
     FILE *averageCaseFile = fopen("/home/asaas/CLionProjects/trabalho/averageCase.txt", "w+");
     FILE *bestCaseFile = fopen("/home/asaas/CLionProjects/trabalho/bestCase.txt", "w+");
 
-    fprintf(worstCaseFile, "%s", "tamanho;bubble;insertion;heap;merge;quick;radix");
-    fprintf(bestCaseFile, "%s", "tamanho;bubble;insertion;heap;merge;quick;radix");
-    fprintf(averageCaseFile, "%s", "tamanho;bubble;insertion;heap;merge;quick;radix");
+    fprintf(worstCaseFile, "%s", "tamanho;bubble;insertion;heap;merge;quick;radix\n");
+    fprintf(bestCaseFile, "%s", "tamanho;bubble;insertion;heap;merge;quick;radix\n");
+    fprintf(averageCaseFile, "%s", "tamanho;bubble;insertion;heap;merge;quick;radix\n");
 
     for (int currentVectorSize = 1; currentVectorSize <= maxSize; currentVectorSize++) {
         int* vWorstCase = worstCase(currentVectorSize);

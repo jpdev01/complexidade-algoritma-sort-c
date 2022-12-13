@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void swap(int v[], int i, int j) {
+void swap2(int v[], int i, int j) {
     int aux = v[i];
     v[i] = v[j];
     v[j] = aux;
@@ -13,7 +13,7 @@ int bubbleSort(int v[], int n) {
         for (int j = i + 1; j < n; j++) {
             contador++;
             if (v[i] > v[j]) {
-                swap(v, i, j);
+                swap2(v, i, j);
             }
         }
     }

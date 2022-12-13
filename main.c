@@ -26,9 +26,9 @@ void runTestAndRecord(FILE *file, int* v, int currentVectorSize) {
 
 void main() {
     int maxSize = 1000;
-    FILE *worstCaseFile = fopen("/home/asaas/CLionProjects/trabalho/worstCase.txt", "w+");
-    FILE *averageCaseFile = fopen("/home/asaas/CLionProjects/trabalho/averageCase.txt", "w+");
-    FILE *bestCaseFile = fopen("/home/asaas/CLionProjects/trabalho/bestCase.txt", "w+");
+    FILE *worstCaseFile = fopen("/home/asaas/CLionProjects/trabalho/worstCase.csv", "w+");
+    FILE *averageCaseFile = fopen("/home/asaas/CLionProjects/trabalho/averageCase.csv", "w+");
+    FILE *bestCaseFile = fopen("/home/asaas/CLionProjects/trabalho/bestCase.csv", "w+");
 
     fprintf(worstCaseFile, "%s", "tamanho;bubble;insertion;heap;merge;radix\n");
     fprintf(bestCaseFile, "%s", "tamanho;bubble;insertion;heap;merge;radix\n");

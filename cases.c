@@ -20,12 +20,16 @@ int* worstCase(int n) {
     return vetor;
 }
 
-int* averageCase(int n) {
-    int* vetor = malloc(sizeof(int) * n);
+int *averageCase(int n) {
+    int *vetor = malloc(sizeof(int) * n);
 
-    // TODO média de 10 execuções distintas.
     for (int i = 0; i < n; i++) {
-        vetor[i] = rand() % n;
+        int averageTestTimes = 10;
+        // média de 10 execuções distintas.
+        for (int media = 0; media < averageTestTimes; media++) {
+            vetor[i] += rand() % n;
+        }
+        vetor[i] = vetor[i] / averageTestTimes;
     }
 
     return vetor;

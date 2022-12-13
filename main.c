@@ -23,24 +23,25 @@ void runTestAndRecord(FILE *file, int* v, int currentVectorSize) {
 
 int main() {
     int maxSize = 1000;
-    FILE *piorCasoFile = fopen("/home/asaas/CLionProjects/trabalho/piorCaso.txt", "w+");
-    FILE *melhorCasoFile = fopen("/home/asaas/CLionProjects/trabalho/melhorCaso.txt", "w+");
-    FILE *casoMedioFile = fopen("/home/asaas/CLionProjects/trabalho/casoMedio.txt", "w+");
+    FILE *worstCaseFile = fopen("/home/asaas/CLionProjects/trabalho/worstCase.txt", "w+");
+    FILE *averageCaseFile = fopen("/home/asaas/CLionProjects/trabalho/averageCase.txt", "w+");
+    FILE *bestCaseFile = fopen("/home/asaas/CLionProjects/trabalho/bestCase.txt", "w+");
 
-    fprintf(piorCasoFile, "%s","tamanho;bubble;insertion;heap;merge;quick;radix");
-    fprintf(melhorCasoFile, "%s","tamanho;bubble;insertion;heap;merge;quick;radix");
-    fprintf(casoMedioFile, "%s","tamanho;bubble;insertion;heap;merge;quick;radix");
+    fprintf(worstCaseFile, "%s", "tamanho;bubble;insertion;heap;merge;quick;radix");
+    fprintf(bestCaseFile, "%s", "tamanho;bubble;insertion;heap;merge;quick;radix");
+    fprintf(averageCaseFile, "%s", "tamanho;bubble;insertion;heap;merge;quick;radix");
 
     for (int currentVectorSize = 1; currentVectorSize <= maxSize; currentVectorSize++) {
-        int* vPiorCaso = piorCaso(currentVectorSize);
-        int* vCasoMedio = piorCaso(currentVectorSize);
-        int* vMelhorCaso = piorCaso(currentVectorSize);
+        int* vWorstCase = worstCase(currentVectorSize);
+        int* vAverageCase = averageCase(currentVectorSize);
+        int* vBestCase = bestCase(currentVectorSize);
 
-        runTestAndRecord(piorCasoFile, vPiorCaso, currentVectorSize);
-        runTestAndRecord(casoMedioFile, vCasoMedio, currentVectorSize);
-        runTestAndRecord(melhorCasoFile, vMelhorCaso, currentVectorSize);
+        runTestAndRecord(worstCaseFile, vWorstCase, currentVectorSize);
+        runTestAndRecord(averageCaseFile, vAverageCase, currentVectorSize);
+        runTestAndRecord(bestCaseFile, vBestCase, currentVectorSize);
     }
-    fclose(piorCasoFile);
-    fclose(melhorCasoFile);
-    fclose(casoMedioFile);
+
+    fclose(worstCaseFile);
+    fclose(bestCaseFile);
+    fclose(averageCaseFile);
 }

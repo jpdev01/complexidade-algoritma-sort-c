@@ -1,6 +1,6 @@
 #include <stdlib.h>
 
-int* melhorCaso(int n) {
+int* bestCase(int n) {
     int* vetor = malloc(sizeof(int) * n);
 
     for (int i = 0; i < n; i++) {
@@ -10,7 +10,7 @@ int* melhorCaso(int n) {
     return vetor;
 }
 
-int* piorCaso(int n) {
+int* worstCase(int n) {
     int* vetor = malloc(sizeof(int) * n);
 
     for (int i = 0; i < n; i++) {
@@ -20,7 +20,7 @@ int* piorCaso(int n) {
     return vetor;
 }
 
-int* casoMedio(int n) {
+int* averageCase(int n) {
     int* vetor = malloc(sizeof(int) * n);
 
     // TODO média de 10 execuções distintas.

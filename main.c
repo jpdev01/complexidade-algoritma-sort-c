@@ -16,19 +16,35 @@ int* clone(int v[], int n) {
     return c;
 }
 
-int main() {
-    int n = 10000;
-    int* vPiorCaso = piorCaso(n);
-    int* vMelhorCaso = melhorCaso(n);
-    int* vCasoMedio = casoMedio(n);
+void runTestAndRecord(FILE *file, int* v, int currentVectorSize) {
+    int piorCasoBubbleSort = bubbleSort(clone(v, currentVectorSize), currentVectorSize);
+    int piorCasoHeapSort = heapSort(clone(v, currentVectorSize), currentVectorSize);
+    fprintf(file, "%i,%d,%d", currentVectorSize, piorCasoBubbleSort, piorCasoHeapSort);
+}
 
-    printf("Bubblesort v1\n");
-    printf("Pior caso: %d\n", bubbleSort(clone(vPiorCaso, n), n));
-    printf("Melhor caso: %d\n", bubbleSort(clone(vMelhorCaso, n), n));
-    printf("Caso medio: %d\n", bubbleSort(clone(vCasoMedio, n), n));
+void main() {
+    int maxSize = 1000;
+    FILE *worstCaseFile = fopen("/home/asaas/CLionProjects/trabalho/worstCase.txt", "w+");
+    FILE *averageCaseFile = fopen("/home/asaas/CLionProjects/trabalho/averageCase.txt", "w+");
+    FILE *bestCaseFile = fopen("/home/asaas/CLionProjects/trabalho/bestCase.txt", "w+");
 
-    printf("Heapsort\n");
-    printf("Pior caso: %d\n", heapSort(clone(vPiorCaso, n), n));
-    printf("Melhor caso: %d\n", heapSort(clone(vMelhorCaso, n), n));
-    printf("Caso medio: %d\n", heapSort(clone(vCasoMedio, n), n));
+    fprintf(worstCaseFile, "%s", "tamanho;bubble;insertion;heap;merge;quick;radix");
+    fprintf(bestCaseFile, "%s", "tamanho;bubble;insertion;heap;merge;quick;radix");
+    fprintf(averageCaseFile, "%s", "tamanho;bubble;insertion;heap;merge;quick;radix");
+
+    for (int currentVectorSize = 1; currentVectorSize <= maxSize; currentVectorSize++) {
+        int* vWorstCase = worstCase(currentVectorSize);
+        int* vAverageCase = averageCase(currentVectorSize);
+        int* vBestCase = bestCase(currentVectorSize);
+
+        runTestAndRecord(worstCaseFile, vWorstCase, currentVectorSize);
+        runTestAndRecord(averageCaseFile, vAverageCase, currentVectorSize);
+        runTestAndRecord(bestCaseFile, vBestCase, currentVectorSize);
+    }
+
+    fclose(worstCaseFile);
+    fclose(bestCaseFile);
+    fclose(averageCaseFile);
+
+    printf("Arquivo csv gerado.");
 }

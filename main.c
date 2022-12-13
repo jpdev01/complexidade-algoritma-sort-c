@@ -1,35 +1,32 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "bubbleSort.c"
+#include "heapSort.c"
+#include "cases.c"
 
-void main() {
+int* clone(int v[], int n) {
+    int* c = malloc(sizeof(int) * n);
 
-    int* melhorCaso(int n) {
-        int* vetor = malloc(sizeof(int) * n);
-
-        for (int i = 0; i < n; i++) {
-            vetor[i] = i;
-        }
-
-        return vetor;
+    for (int i = 0; i < n; i++) {
+        c[i] = v[i];
     }
 
-    int* piorCaso(int n) {
-        int* vetor = malloc(sizeof(int) * n);
+    return c;
+}
 
-        for (int i = 0; i < n; i++) {
-            vetor[i] = (n - 1) - i;
-        }
+int main() {
+    int n = 10000;
+    int* vPiorCaso = piorCaso(n);
+    int* vMelhorCaso = melhorCaso(n);
+    int* vCasoMedio = casoMedio(n);
 
-        return vetor;
-    }
+    printf("Bubblesort v1\n");
+    printf("Pior caso: %d\n", bubbleSort(clone(vPiorCaso, n), n));
+    printf("Melhor caso: %d\n", bubbleSort(clone(vMelhorCaso, n), n));
+    printf("Caso medio: %d\n", bubbleSort(clone(vCasoMedio, n), n));
 
-    int* casoMedio(int n) {
-        int* vetor = malloc(sizeof(int) * n);
-
-        for (int i = 0; i < n; i++) {
-            vetor[i] = rand() % n;
-        }
-
-        return vetor;
-    }
+    printf("Bubblesort v2\n");
+    printf("Pior caso: %d\n", heapSort(clone(vPiorCaso, n), n));
+    printf("Melhor caso: %d\n", heapSort(clone(vMelhorCaso, n), n));
+    printf("Caso medio: %d\n", heapSort(clone(vCasoMedio, n), n));
 }

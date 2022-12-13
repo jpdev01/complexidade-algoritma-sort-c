@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include "swap.c"
 #include "bubbleSort.c"
 #include "heapSort.c"
 #include "cases.c"
-#include "swap.c"
 
 int* clone(int v[], int n) {
     int* c = malloc(sizeof(int) * n);

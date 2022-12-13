@@ -1,5 +1,3 @@
-#include "swap.c"
-
 void heapify(int v[], int n, int i, int* contador) {
     int raiz = i;
     int esquerda = 2 * i + 1;

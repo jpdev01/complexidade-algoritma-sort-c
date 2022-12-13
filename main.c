@@ -18,10 +18,10 @@ int* clone(int v[], int n) {
 }
 
 void runTestAndRecord(FILE *file, int* v, int currentVectorSize) {
-    int piorCasoBubbleSort = bubbleSort(clone(v, currentVectorSize), currentVectorSize);
-    int insertionSort = insertionsort(clone(v, currentVectorSize), currentVectorSize);
-    int piorCasoHeapSort = heapSort(clone(v, currentVectorSize), currentVectorSize);
-    fprintf(file, "%i,%d,%d,%d", currentVectorSize, piorCasoBubbleSort, insertionSort, piorCasoHeapSort);
+    int bubbleSortResult = bubbleSort(clone(v, currentVectorSize), currentVectorSize);
+    int insertionSortResult = insertionsort(clone(v, currentVectorSize), currentVectorSize);
+    int heapSortResult = heapSort(clone(v, currentVectorSize), currentVectorSize);
+    fprintf(file, "%i,%d,%d,%d", currentVectorSize, bubbleSortResult, insertionSortResult, heapSortResult);
 }
 
 void main() {

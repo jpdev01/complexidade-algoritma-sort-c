@@ -16,18 +16,27 @@ int* clone(int v[], int n) {
 }
 
 int main() {
-    int n = 10000;
-    int* vPiorCaso = piorCaso(n);
-    int* vMelhorCaso = melhorCaso(n);
-    int* vCasoMedio = casoMedio(n);
+    int maxSize = 1000;
+    printf("tamanho;bubble;insertion;heap;merge;quick;radix");
+    for (int currentVectorSize = 1; currentVectorSize <= maxSize; currentVectorSize++) {
+        int* vPiorCaso = piorCaso(currentVectorSize);
+        int* vMelhorCaso = melhorCaso(currentVectorSize);
+        int* vCasoMedio = casoMedio(currentVectorSize);
 
-    printf("Bubblesort v1\n");
-    printf("Pior caso: %d\n", bubbleSort(clone(vPiorCaso, n), n));
-    printf("Melhor caso: %d\n", bubbleSort(clone(vMelhorCaso, n), n));
-    printf("Caso medio: %d\n", bubbleSort(clone(vCasoMedio, n), n));
+        printf("%i", currentVectorSize);
+        printf(";%d", bubbleSort(clone(vPiorCaso, currentVectorSize), currentVectorSize));
+        printf(";%d", heapSort(clone(vPiorCaso, currentVectorSize), currentVectorSize));
+//        printf(";%d", bubbleSort(clone(vMelhorCaso, currentVectorSize), currentVectorSize));
+//        printf(";%d", bubbleSort(clone(vCasoMedio, currentVectorSize), currentVectorSize));
 
-    printf("Heapsort\n");
-    printf("Pior caso: %d\n", heapSort(clone(vPiorCaso, n), n));
-    printf("Melhor caso: %d\n", heapSort(clone(vMelhorCaso, n), n));
-    printf("Caso medio: %d\n", heapSort(clone(vCasoMedio, n), n));
+//        printf(";%d", heapSort(clone(vPiorCaso, currentVectorSize), currentVectorSize));
+//        printf(";%d", heapSort(clone(vMelhorCaso, currentVectorSize), currentVectorSize));
+//        printf(";%d", heapSort(clone(vCasoMedio, currentVectorSize), currentVectorSize));
+
+        //TODO padrao csv
+        // tamanho;bubble;insertion;heap;merge;quick;radix ->
+        // n;n;n;n;n;n;n
+
+        // UM csv pro melhor, um pro medio, um pro pior.
+    }
 }

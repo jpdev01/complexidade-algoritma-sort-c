@@ -23,6 +23,7 @@ int* piorCaso(int n) {
 int* casoMedio(int n) {
     int* vetor = malloc(sizeof(int) * n);
 
+    // TODO média de 10 execuções distintas.
     for (int i = 0; i < n; i++) {
         vetor[i] = rand() % n;
     }

@@ -20,14 +20,20 @@ void heapify(int v[], int n, int i, int* contador) {
 
 int heapSort(int v[], int n) {
     int contador = 0;
-    
+
+    ++contador;
     for (int i = n / 2 - 1; i >= 0; i--) {
         heapify(v, n, i, &contador);
+
+        ++contador;
     }
-    
+
+    ++contador;
     for (int i = n - 1; i > 0; i--) {
         swap(v, 0, i); 
-        heapify(v, i, 0, &contador); 
+        heapify(v, i, 0, &contador);
+
+        ++contador;
     }
 
     return contador;

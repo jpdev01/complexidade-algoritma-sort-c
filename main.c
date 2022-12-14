@@ -52,5 +52,5 @@ void main() {
     fclose(bestCaseFile);
     fclose(averageCaseFile);
 
-    printf("Arquivo csv gerado.");
+    printf("Arquivo csv gerado.\nTrabalho feito por JOAO PEDRO TRUCHINSKI BORBA, EMANOEL DA SILVA DELFINO e LUCAS DE ANDRADE MARTINS");
 }

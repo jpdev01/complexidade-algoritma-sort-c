@@ -6,6 +6,7 @@
 #include "heapSort.c"
 #include "cases.c"
 #include "insertionSort.c"
+#include "mergeSort.c"
 
 int* clone(int v[], int n) {
     int* c = malloc(sizeof(int) * n);
@@ -21,7 +22,8 @@ void runTestAndRecord(FILE *file, int* v, int currentVectorSize) {
     int bubbleSortResult = bubbleSort(clone(v, currentVectorSize), currentVectorSize);
     int insertionSortResult = insertionSort(clone(v, currentVectorSize), currentVectorSize);
     int heapSortResult = heapSort(clone(v, currentVectorSize), currentVectorSize);
-    fprintf(file, "%i,%d,%d,%d\n", currentVectorSize, bubbleSortResult, insertionSortResult, heapSortResult);
+    int mergeSortResult = mergeSortPrincipal(clone(v, currentVectorSize), currentVectorSize);
+    fprintf(file, "%i,%d,%d,%d,%d\n", currentVectorSize, bubbleSortResult, insertionSortResult, heapSortResult, mergeSortResult);
 }
 
 void main() {
